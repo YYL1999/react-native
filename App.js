@@ -11,7 +11,9 @@ import {TabBarIOS} from 'react-native'
 import List from './List'
 import Account from './Account'
 import Edit from'./Edit'
-
+import Home from './home'
+import SplashScreen from 'react-native-splash-screen';
+//import TabNavigator from 'react-native-tab-navigator';
 export default class App extends Component {
   constructor(props){
     super(props)
@@ -19,6 +21,9 @@ export default class App extends Component {
       selectedTabItem:"list"     // 预设变量，记录当前点击的item
     }
   }
+  componentDidMount() {
+    //SplashScreen.hide();
+}
   render() {
     return (
       <View style={styles.container}>
@@ -29,11 +34,20 @@ export default class App extends Component {
                         translucent={true}  // TabBarIOS不需要半透明效果
                     >
                         <TabBarIOS.Item
-                            systemIcon="bookmarks"  // 系统图标(bookmarks)
+                            title="主页"
+                            //systemIcon="bookmarks"  // 系统图标(bookmarks)
+                            icon={require('./pictures/home.png')}
                             onPress={() => {this.setState({selectedTabItem:"list"})}}
                             selected={this.state.selectedTabItem == "list"}
                         >
                                 <List />
+                        </TabBarIOS.Item>
+                        <TabBarIOS.Item
+                            systemIcon="contacts"  // 系统图标(contacts)
+                            onPress={() => {this.setState({selectedTabItem:"home"})}}
+                            selected={this.state.selectedTabItem == "home"}
+                        >
+                           <Home />
                         </TabBarIOS.Item>
                         <TabBarIOS.Item
                             systemIcon="contacts"  // 系统图标(contacts)
@@ -50,6 +64,49 @@ export default class App extends Component {
                            <Account />
                         </TabBarIOS.Item>
                     </TabBarIOS>
+          {/* <TabNavigator>
+                <TabNavigator.Item title='首页'
+                                   selected={this.state.selectedIndex == "list"}
+                                   titleStyle={{color:'#9d9d9d'}}
+                                   selectedTitleStyle={{color:'#ed7f30'}}
+                                   badgeText='首页'
+                                   allowFontScaling={false}
+                                   renderIcon={()=>
+                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
+                                   }
+                                   renderSelectedIcon={()=>
+                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
+                                   }
+                                   onPress={()=>
+                                       this.setState({
+                                           selectedIndex:'list'
+                                       })
+                                   }
+                >
+                    <List />
+                </TabNavigator.Item>
+
+                <TabNavigator.Item title='我的'
+                                   selected={this.state.selectedIndex == "home"}
+                                   titleStyle={{color:'#9d9d9d'}}
+                                   selectedTitleStyle={{color:'#ed7f30'}}
+                                   badgeText={10}
+                                   renderIcon={()=>
+                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
+                                   }
+                                   renderSelectedIcon={()=>
+                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
+                                   }
+                                   onPress={()=>
+                                       this.setState({
+                                           selectedIndex:'home'
+                                       })
+                                   }
+                >
+                   <Home />
+
+                </TabNavigator.Item>
+            </TabNavigator>           */}
       </View>
     );
   }
