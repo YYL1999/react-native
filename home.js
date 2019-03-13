@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View,Image} from 'react-native';
+import { StyleSheet, Text, View,Image,ScrollView} from 'react-native';
 let data=[
   {
     imgurl:"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
@@ -56,34 +56,42 @@ export default class home extends Component{
             </Text>
           </View>
         </View>
-        <View style={{marginTop:5,flex: 1,
+        {
+          data.map((item,index)=>{
+            return(
+              <View style={{height:"auto",overflow:"scroll"}}>
+                <View style={{marginTop:5,flex: 1,
         flexDirection: 'row',height:132
         }}>
          <View style={{marginLeft:5}}>
-         <Image style={{height:127,width:200}} source={{uri:"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg"}} />
+         <Image style={{height:127,width:200}} source={{uri:item.imgurl}} key={index}/>
          </View>
          <View style={{marginLeft:5,width: 160, height: 127, backgroundColor: 'powderblue'}}>
          <Text style={{fontSize:16,lineHeight:20}}>
-           只见风景美如画，可我只能一句卧槽行天下
+           {item.message}
          </Text>
          </View>
         </View>
         <View style={styles.pl}>
         <View style={styles.pl_item}>
             <Text>
-               热度
+               {item.rd}
             </Text>
           </View><View style={styles.pl_item}>
             <Text>
-              评论量
+              {item.pll}
             </Text>
           </View>
           <View style={styles.pl_item}>
             <Text>
-              点赞数
+              {item.dzs}
             </Text>
           </View>
         </View>
+              </View>
+            )
+          })
+        }
       </View>
       )
     }
