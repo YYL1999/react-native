@@ -1,130 +1,61 @@
-/**
- * Sample React Native App
- * Created by leipengfei 
- * 2018.11.11
- * @format
- * @flow
- */
-import React, {Component} from 'react';
-import { StyleSheet, View} from 'react-native';
-import {TabBarIOS} from 'react-native'
-import List from './List'
+// /**
+//  * Sample React Native App
+//  * https://github.com/facebook/react-native
+//  *
+//  * @format
+//  * @flow
+//  * @lint-ignore-every XPLATJSCOPYRIGHT1
+//  */
+
+import React from 'react';
+import { Button, View, Text } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 import Account from './Account'
-import Edit from'./Edit'
-import Home from './home'
-import SplashScreen from 'react-native-splash-screen';
-//import TabNavigator from 'react-native-tab-navigator';
-export default class App extends Component {
-  constructor(props){
-    super(props)
-    this.state={
-      selectedTabItem:"list"     // 预设变量，记录当前点击的item
+import Home from "./home"
+import BottomTabNavigator from './cs'
+import List from './List'
+import News from './news'
+import FeedBack from './feedBack'
+import Register from './register'
+const RootStack = createStackNavigator(
+  {
+    Cs:{
+      screen:BottomTabNavigator,
+      navigationOptions:{
+        header:null,
+        headerBackTitle:"返回"
+      }
+    },
+   Home:Home,
+    News:{
+      screen:News,
+      navigationOptions:{
+        title:"消息",
+        
+      }
+    },
+    FeedBack:{
+      screen:FeedBack,
+      navigationOptions:{
+        title:"意见反馈"
+      }
+    },
+    Register:{
+      screen:Register,
+      navigationOptions:{
+        title:"注册"
+      }
     }
+   },
+  {
+    initialRouteName: 'Cs',
   }
-  componentDidMount() {
-    //SplashScreen.hide();
-}
+);
+
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-       <TabBarIOS
-                        style={{height:49, width: '100%'}}
-                        tintColor="gray"  //被选中标签的颜色
-                       // barTintColor="black"
-                        translucent={true}  // TabBarIOS不需要半透明效果
-                    >
-                        <TabBarIOS.Item
-                            title="主页"
-                            //systemIcon="bookmarks"  // 系统图标(bookmarks)
-                            icon={require('./pictures/home.png')}
-                            onPress={() => {this.setState({selectedTabItem:"list"})}}
-                            selected={this.state.selectedTabItem == "list"}
-                        >
-                                <List />
-                        </TabBarIOS.Item>
-                        <TabBarIOS.Item
-                            systemIcon="contacts"  // 系统图标(contacts)
-                            onPress={() => {this.setState({selectedTabItem:"home"})}}
-                            selected={this.state.selectedTabItem == "home"}
-                        >
-                           <Home />
-                        </TabBarIOS.Item>
-                        <TabBarIOS.Item
-                            systemIcon="contacts"  // 系统图标(contacts)
-                            onPress={() => {this.setState({selectedTabItem:"edit"})}}
-                            selected={this.state.selectedTabItem == "edit"}
-                        >
-                           <Edit />
-                        </TabBarIOS.Item>
-                        <TabBarIOS.Item
-                            systemIcon="downloads"  // 系统图标(downloads)
-                            onPress={() => {this.setState({selectedTabItem:"account"})}}
-                            selected={this.state.selectedTabItem == "account"}
-                        >
-                           <Account />
-                        </TabBarIOS.Item>
-                    </TabBarIOS>
-          {/* <TabNavigator>
-                <TabNavigator.Item title='首页'
-                                   selected={this.state.selectedIndex == "list"}
-                                   titleStyle={{color:'#9d9d9d'}}
-                                   selectedTitleStyle={{color:'#ed7f30'}}
-                                   badgeText='首页'
-                                   allowFontScaling={false}
-                                   renderIcon={()=>
-                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
-                                   }
-                                   renderSelectedIcon={()=>
-                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
-                                   }
-                                   onPress={()=>
-                                       this.setState({
-                                           selectedIndex:'list'
-                                       })
-                                   }
-                >
-                    <List />
-                </TabNavigator.Item>
-
-                <TabNavigator.Item title='我的'
-                                   selected={this.state.selectedIndex == "home"}
-                                   titleStyle={{color:'#9d9d9d'}}
-                                   selectedTitleStyle={{color:'#ed7f30'}}
-                                   badgeText={10}
-                                   renderIcon={()=>
-                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
-                                   }
-                                   renderSelectedIcon={()=>
-                                       <Image source={{uri:'http://lpf.yywlx.cn/home.png'}} style={styles.iconStyle}/>
-                                   }
-                                   onPress={()=>
-                                       this.setState({
-                                           selectedIndex:'home'
-                                       })
-                                   }
-                >
-                   <Home />
-
-                </TabNavigator.Item>
-            </TabNavigator>           */}
-      </View>
-    );
+    return <AppContainer />;
   }
 }
-
-const styles = StyleSheet.create({
-  container:{
-   height:'100%',
-   width:'100%',
-   flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  // container: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: '#F5FCFF',
-  // }
-});

@@ -107,7 +107,16 @@ const fyzq=[
 let data=pt;
 let  state="a"
 export default class Edit extends Component{
-   
+  static navigationOptions ={
+    title:"营养餐系统",
+    headerStyle:{
+        backgroundColor:"gray"
+    },
+    headerTintColor:"#fff",
+    headerTitleStyle:{
+        fontWeight:"blod"
+    }
+}
     changeSelected(){
      
         state="a"

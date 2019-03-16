@@ -34,6 +34,7 @@ export default class home extends Component{
     render(){
       return(
         <View >
+        <ScrollView scrollsToTop={true}>
         <View style={{marginTop:42,backgroundColor:"#DCDCDC",height:30}}>
           <Text style={{fontSize:22,textAlign:"center",marginTop:3}}>
             营养社区
@@ -92,6 +93,7 @@ export default class home extends Component{
             )
           })
         }
+        </ScrollView>
       </View>
       )
     }

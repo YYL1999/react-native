@@ -6,6 +6,8 @@ import {Platform, StyleSheet, Text, View,Button,Dimensions,Image,ScrollView, Tou
     ListView,
 } from 'react-native';
 import ScrollVertical from './scroll'
+import { StackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from "react-navigation";
 let widthScreen = Dimensions.get('window').width;
 let {width, height} = Dimensions.get('window');
 const dataArray = [
@@ -59,6 +61,7 @@ let texts=[
   "欢迎品尝"
 ]
 export default class List extends Component{
+
     static defaultProps = {
         //每隔多少秒执行一次
         duration:2000
@@ -85,8 +88,11 @@ export default class List extends Component{
     // debugger
         // 开启定时器
         this.startTime();
+        console.log(this.props)
     }
-    
+    handlePress(){
+        console.log("a")
+    }
     // 开启定时器
     startTime(){
         // 1.拿到scrollerView
@@ -124,21 +130,30 @@ export default class List extends Component{
                 array.push({ content: item.title});
             }
         }
-
+       
       return(
         <View >
         <View style={{marginTop:10}}>
-        <View style={styles.topstyle}>
+  
+        <View style={styles.topstyle} >
+        <TouchableOpacity onPress={()=>this.props.navigation.navigate('News')}>
         <Image
           style={{width:40,height:40,margin:2}}
-          source={{uri: 'http://lpf.yywlx.cn/message.png'}}
+          source={{uri: 'http://lpf.yywlx.cn/message.png'}} 
+          
         />
+        </TouchableOpacity>
+       
          </View> 
+  
+        
          <View style={{marginLeft:140,marginTop:-30,}}>
            <Text style={{fontSize:20}}>营养餐系统</Text>
          </View> 
          <View style={styles.yjstyle}>
-             <Image style={{width:40,height:40,margin:1}} source={{uri:'http://lpf.yywlx.cn/%E6%84%8F%E8%A7%81%E5%8F%8D%E9%A6%88.png'}}/>
+          <TouchableOpacity onPress={()=>this.props.navigation.navigate('FeedBack')}>
+          <Image style={{width:40,height:40,margin:1}} source={{uri:'http://lpf.yywlx.cn/%E6%84%8F%E8%A7%81%E5%8F%8D%E9%A6%88.png'}}/>
+          </TouchableOpacity>
          </View>
         </View>
          <View style={styles.circulateViewStyle}>
@@ -204,7 +219,7 @@ export default class List extends Component{
 
        <View style={styles.abc}>
            <View style={styles.abc_item}>
-           <Text style={styles.fontstyle}>每日签到</Text>
+           <Text style={styles.fontstyle} >每日签到</Text>
            </View>
            <View style={styles.abc_item}>
          <Text style={styles.fontstyle}> 健康数据</Text>
