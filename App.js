@@ -17,6 +17,8 @@ import List from './List'
 import News from './news'
 import FeedBack from './feedBack'
 import Register from './register'
+import Zx from './zx'
+import Cp from './cp'
 const RootStack = createStackNavigator(
   {
     Cs:{
@@ -45,8 +47,18 @@ const RootStack = createStackNavigator(
       navigationOptions:{
         title:"注册"
       }
-    }
+    },
+    Zx:{
+      screen:Zx,
+    },
+    Cp:{
+      screen:Cp,
+      navigationOptions:{
+        title:'我的餐谱'
+      }
+    },
    },
+   
   {
     initialRouteName: 'Cs',
   }

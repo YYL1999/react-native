@@ -51,7 +51,7 @@ export default class User extends Component{
                  <View style={styles.data_item}>
                      
                      <View style={styles.xj}>
-                     <Text>我的菜谱</Text>
+                     <Text onPress={()=>this.props.navigation.navigate('Cp')}>我的菜谱</Text>
                      </View>
                  </View>
                  <View style={styles.data_item}>

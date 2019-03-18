@@ -139,8 +139,11 @@ export default class Edit extends Component{
       data=fyzq
       console.log(data)
     }
+    abc(item){
+      this.props.navigation.navigate('Zx',{name:item.name,url:item.imgurl})
+    }
     render(){
-     
+     console.log(this.props)
       return(
         <View >
         <View style={{marginTop:42,backgroundColor:"#DCDCDC",height:30}}>
@@ -193,6 +196,7 @@ export default class Edit extends Component{
         </View> */}
         {
           data.map((item,index)=>{
+            const abc=()=>{this.props.navigation.navigate('Zx',{name:item.name,url:item.imgurl})}
             return (
               <View style={{height:110}}>
                <View style={{display:"flex",flexDirection:'row',flexWrap:"wrap"}}>
@@ -210,8 +214,8 @@ export default class Edit extends Component{
                   {item.itr}
                 </Text>
               </View>
-              <View style={{margin:20,marginTop:40}}>
-                <Text style={{fontSize:22}}>
+              <View style={{margin:20,marginTop:40}} >
+                <Text style={{fontSize:22}} onPress={()=>this.abc(item)}>
                 咨询
                 </Text>
               </View>
