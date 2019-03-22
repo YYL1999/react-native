@@ -16,7 +16,7 @@ const BottomTabNavigator = createBottomTabNavigator(
          tabBarLabel: "首页",
          tabBarIcon: ({focused, tintColor}) => (
              <Image
-                 //source={focused? {uri:"icon_tabbar_homepage_selected"} :                                                 {uri:"icon_tabbar_homepage"}}
+                 source={focused? {uri:"http://lpf.yywlx.cn/sy.png"} :                                                 {uri:"http://lpf.yywlx.cn/sys.png"}}
                  style={styles.tabBarIconStyle}
              />
          ),
