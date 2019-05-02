@@ -25,31 +25,31 @@ let ImageData={
     "data":
     [
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"你那一笑倾国倾城"
       },
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"那里记录了最唯美的爱情故事"
       },
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"我怎么是个剩女"
       },
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"生命中最后的四分钟"
       },
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"我们都需要治疗"
       },
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"这是一个美好的开始"
       },
       {
-        "img":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=534858419,2528258774&fm=200&gp=0.jpg",
+        "img":"http://lpf.yywlx.cn/DSC_6400.jpg",
         "title":"最后的晚宴"
       }
     ]
@@ -412,7 +412,11 @@ abc_item:{
     margin:5,width:160,height:100,
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:"#D0D0D0"
+    backgroundColor:"#00FFFF",
+    borderBottomLeftRadius:20,
+    borderBottomRightRadius:20,
+    borderTopLeftRadius:20,
+    borderTopRightRadius:20
 },
 fontstyle:{
    fontSize:28,

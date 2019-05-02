@@ -29,7 +29,7 @@ const BottomTabNavigator = createBottomTabNavigator(
          tabBarLabel: "营养社区",
          tabBarIcon: ({focused, tintColor}) => (
              <Image
-                // source={focused? {uri:"icon_tabbar_merchant_selected"} :                                                 {uri:"icon_tabbar_merchant_normal"}}
+                 source={ {uri:"http://qn.ailpf.cn/yyc/sq.png"} }
                  style={styles.tabBarIconStyle}
              />
          )
@@ -41,7 +41,7 @@ const BottomTabNavigator = createBottomTabNavigator(
        tabBarLabel: "营养咨询",
        tabBarIcon: ({focused, tintColor}) => (
            <Image
-              // source={focused? {uri:"icon_tabbar_merchant_selected"} :                                                 {uri:"icon_tabbar_merchant_normal"}}
+           source={{uri:"http://qn.ailpf.cn/yyc/zx.png"} }
                style={styles.tabBarIconStyle}
            />
        )
@@ -53,7 +53,7 @@ const BottomTabNavigator = createBottomTabNavigator(
        tabBarLabel: "私人订制",
        tabBarIcon: ({focused, tintColor}) => (
            <Image
-              // source={focused? {uri:"icon_tabbar_merchant_selected"} :                                                 {uri:"icon_tabbar_merchant_normal"}}
+              source={ {uri:"http://qn.ailpf.cn/yyc/sq.png"} }
                style={styles.tabBarIconStyle}
            />
        )
@@ -65,7 +65,7 @@ const BottomTabNavigator = createBottomTabNavigator(
        tabBarLabel: "个人中心",
        tabBarIcon: ({focused, tintColor}) => (
            <Image
-              // source={focused? {uri:"icon_tabbar_merchant_selected"} :                                                 {uri:"icon_tabbar_merchant_normal"}}
+               source={ {uri:"http://qn.ailpf.cn/yyc/gr.png"} }
                style={styles.tabBarIconStyle}
            />
        )
