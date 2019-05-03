@@ -128,7 +128,7 @@ const styles=StyleSheet.create({
   height:35,
   justifyContent:'center',
   flexWrap:'wrap',
-  marginTop:135
+  //marginTop:135
  },
  pl_item:{
   width:105,height:30,
@@ -136,6 +136,10 @@ const styles=StyleSheet.create({
   justifyContent:'center',
   backgroundColor:"#D0D0D0",
   borderColor:"red",
-  margin:3
+  margin:3,
+  borderTopLeftRadius: 5,
+          borderTopRightRadius: 5,
+          borderBottomRightRadius: 5,
+          borderBottomLeftRadius: 5,
  }
 })

@@ -351,10 +351,10 @@ const styles=StyleSheet.create({
            
             backgroundColor: "#fff",
             borderWidth: 1,
-            borderTopLeftRadius: 5,
-            borderTopRightRadius: 5,
-            borderBottomRightRadius: 5,
-            borderBottomLeftRadius: 5,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
+            borderBottomRightRadius: 10,
+            borderBottomLeftRadius: 10,
   },
   yjstyle:{
     marginTop:-34,

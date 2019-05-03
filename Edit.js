@@ -117,27 +117,40 @@ export default class Edit extends Component{
         fontWeight:"blod"
     }
 }
-    changeSelected(){
-     
-        state="a"
-     
+   constructor(){
+     super()
+     this.state={
+       state:"a"
+     }
+    
+   }
+    changeSelected=()=>{   
+      if(this.state.state==="a") return  
+       this.setState=({
+        state:"a"
+       })
       data=pt
-      console.log(data)
     }
-    changeSelecteda(){
-     state="b"
+    changeSelecteda=()=>{
+      if(this.state.state==="b") return  
+   this.setState({
+    state:"b"
+   })  
       data=mxb
-      console.log(data)
     }
-    changeSelectedb(){
-     state="c"
+    changeSelectedb=()=>{
+      if(this.state.state==="c") return  
+      this.setState({
+        state:"c"
+      })
       data=gyrq
-      console.log(data)
     }
-    changeSelectedc(){
-     state="d"
+    changeSelectedc=()=>{
+      if(this.state.state==="d") return  
+    this.setState({
+      state:"d"
+    })
       data=fyzq
-      console.log(data)
     }
     abc(item){
       this.props.navigation.navigate('Zx',{name:item.name,url:item.imgurl})
@@ -173,27 +186,6 @@ export default class Edit extends Component{
              </Text>
            </View>
         </View>
-        {/* <View style={{display:"flex",flexDirection:'row',flexWrap:"wrap"}}>
-            <View style={{width:130,height:100,marginLeft:4}}>
-              <View style={styles.imgs}>
-              <Image source={{uri:'http://lpf.yywlx.cn/2017.04.07.chuantian13.jpg'}} style={{height:80,width:80}}/>
-              </View>
-            </View>
-            <View style={{width:150,height:100,marginTop:10}}>
-             <Text style={{fontSize:16}}>
-               西安上
-             </Text>
-             
-              <Text style={{fontSize:16}}>
-                xsaxasxasxxas
-              </Text>
-            </View>
-            <View style={{margin:20,marginTop:40}}>
-              <Text style={{fontSize:22}}>
-              咨询
-              </Text>
-            </View>
-        </View> */}
         {
           data.map((item,index)=>{
             const abc=()=>{this.props.navigation.navigate('Zx',{name:item.name,url:item.imgurl})}
